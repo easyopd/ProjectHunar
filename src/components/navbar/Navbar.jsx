@@ -12,7 +12,7 @@ function Navbar() {
   const { mode, toggleMode } = context;
   const [open, setOpen] = useState(false);
   const user = JSON.parse(localStorage.getItem('user'));
-  //console.log("User details are stored successfully:", user);
+  console.log("User details are stored successfully:", user);
   const cartItems = useSelector((state) => state.cart);
 
   const logout = () => {

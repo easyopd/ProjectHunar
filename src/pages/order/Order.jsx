@@ -4,7 +4,16 @@ import Layout from '../../components/layout/Layout'
 import Loader from '../../components/loader/Loader'
 
 function Order() {
-  const userid = JSON.parse(localStorage.getItem('user')).user.uid
+  const userData = JSON.parse(localStorage.getItem('user'));
+
+  let userid = null;
+  if (userData && userData.user && userData.user.uid) {
+    userid = userData.user.uid;
+  } else {
+    console.log("User data or UID not found in localStorage.");
+  }
+
+
   const context = useContext(myContext)
   const { mode, loading, order } = context
   return (
